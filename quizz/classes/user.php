@@ -39,7 +39,7 @@ class User
         $_SESSION['id'] = $id;
         $result=self::getById($id);
         $_SESSION['bestScore']=$result->bestScore;
-        header("Location: http://localhost/quizz/quizz.php");
+        header("Location: http://localhost/quizz/view/quizz.php");
         echo $_SESSION['id'];
         echo $_SESSION['bestScore'];
       } else {
@@ -53,7 +53,7 @@ class User
       $query = $stmt->fetch();
       if (!$query) {
         $_SESSION['message'] = "email is already in use you need an other email to log in";
-        header("Location:index.php");
+        header("location:http://localhost/quizz/view/index.php");
         echo "error";
       } else {
         $_SESSION['id'] = $query['id'];
@@ -62,7 +62,7 @@ class User
         echo $_SESSION['id'];
         echo $_SESSION['bestScore'];
         var_dump( $result);
-        header("Location:quizz.php");
+        header("Location: http://localhost/quizz/view/quizz.php");
       }
     }
   }
