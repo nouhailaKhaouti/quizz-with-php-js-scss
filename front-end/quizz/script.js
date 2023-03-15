@@ -59,8 +59,6 @@ nextBtn.addEventListener("click", () => {
   index++;
   let vari= (index * 100) / (question.length - 1);
   let progresse= Math.trunc(vari);
-//   console.log(progresse)
-//   console.log(progresse + "%")
   document.getElementById("progress").setAttribute("value", progresse);
   document.getElementById("progressName").innerText = progresse + "%";
   nextQuestion(shuffledQuestions[index])
